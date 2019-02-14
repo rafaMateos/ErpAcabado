@@ -1,0 +1,75 @@
+<html>
+<body>
+<div class="div-home">
+
+  <div class="headercontainer">
+
+  <div class="buttoncontainer">
+      <button class="newbutton" routerLink="/newOrder">NEW ORDER</button>
+  </div>
+
+ <p class="pagename">ORDERS</p>
+
+
+ <div class="searchcontainer">
+    <input type="text" class="search" placeholder="Search...">
+   </div>
+
+</div>
+
+
+ <hr>
+
+
+<div class="tablecontainer">
+<table cdk-table [dataSource]="Pedidos" class="ordertable">
+
+  <tr cdk-header-row *cdkHeaderRowDef="columns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: columns"></tr>
+  <!-- nombre Column -->
+  <ng-container cdkColumnDef="fechaPedido">
+    <th cdk-header-cell *cdkHeaderCellDef>Order Date</th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.fechaPedido | date: 'dd/MM/yyyy'}}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="fechaEntrega">
+    <th cdk-header-cell *cdkHeaderCellDef>Dispatch Date</th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.fechaEntrega | date: 'dd/MM/yyyy' |  DispatchDateConversion}}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="nombreCliente">
+    <th cdk-header-cell *cdkHeaderCellDef>Customer</th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.nombreCliente}}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="nombreVendedor">
+    <th cdk-header-cell *cdkHeaderCellDef>Supplier</th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.nombreVendedor}}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="totalPedido">
+    <th cdk-header-cell *cdkHeaderCellDef>Total (€)</th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.totalPedido | number : '1.2-2'}}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="Acciones">
+    <th cdk-header-cell *cdkHeaderCellDef>Options</th>
+    <td cdk-cell *cdkCellDef="let row">
+      <i value="Borrar" (click)="Borrar(row.id, row.fechaEntrega)" class="material-icons">delete</i>
+      <i routerLink="/detail/{{row.id}}" class="material-icons">edit</i>
+    </td>
+  </ng-container>
+
+
+</table>
+
+<div id="DivProgres">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

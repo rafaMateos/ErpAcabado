@@ -1,0 +1,192 @@
+
+
+::ng-deep .mat-progress-bar-fill::after {
+    background-color: var(--marron);
+}
+
+::ng-deep .mat-progress-bar-buffer {
+    background: #E4E8EB;
+}
+
+::ng-deep .mat-progress-bar {
+    border-radius: 2px;
+}
+
+#DivProgres{
+
+margin: auto;
+margin-top: 30vh;
+width: 50vw;
+
+}
+
+
+body {
+  position: relative;
+  margin: auto;
+  font-family: 'bah';
+  color: var(--marron);   
+}
+
+.headercontainer{
+
+display: flex;
+
+}
+
+.newbutton{
+
+  float: left;
+  font-family: "bah";
+  font-weight: bold;
+  border: 0;
+  border-radius: 8px;
+  background: var(--blanco);
+  color: var(--marron);
+
+  font-size: var(--tamanoindice);
+
+  width: 160px;
+  height: 50px;
+
+  margin-top: 24px; 
+  margin-left: 32px;
+
+}
+
+.newbutton:hover{
+
+  background: var(--marron);
+  color: var(--blanco);
+  cursor: pointer;
+
+}
+
+.buttoncontainer{
+
+  width:33.33333%;
+
+}
+
+.pagename{
+
+  font-size: 60px;
+  font-weight: bold;
+  margin: auto;
+  padding-top: 16px;
+  text-align: center;
+  width:33.33333%;
+}
+
+.search{
+
+  font-family: 'bah';
+  float: right;
+  border: none;
+  border-bottom: 2px solid var(--marron);
+  margin-top: 32px; 
+  margin-right: 32px;
+  font-size: var(--tamanoindice);
+}
+
+.search:focus{
+
+outline: none;
+
+}
+
+.searchcontainer{
+
+  width:33.33333%;
+}
+
+hr{
+  background-color: var(--marron);
+  height: 4px;
+  margin-left: 16px;
+  margin-right: 16px;
+  border: none;
+
+}
+
+.div-home{
+  margin: auto;
+  text-align: center;
+
+  background: var(--blanco);
+  border-radius: 8px;
+  width: 85vw;
+ 
+  float: right;
+  margin-right: 32px; 
+  margin-top: -32px;
+
+}
+
+.ordertable{
+
+margin: auto;
+width: 100%;
+
+}
+
+
+
+.tablecontainer{
+
+  overflow-y:scroll;
+  height: 80vh;
+
+
+}
+
+th{
+  padding-top: 16px;
+  font-size: 24px;
+
+}
+
+
+td{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 20px;
+  color: var(--gris);
+  overflow: hidden;
+  
+}
+
+/*tr:nth-child(even){
+  
+  background-color: var(--marronClaro);
+}*/
+
+/*td:hover{  //Preguntar si gustaria algo asi
+
+  background: var(--marronClaro);
+  color: var(--blanco);
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+
+}*/
+
+.material-icons:hover{
+
+  color: var(--marron);
+  outline: none;
+  cursor: pointer;
+}
+
+.material-icons{
+
+  font-size: 32px;
+  
+}
+
+.progress{
+
+margin: auto;
+
+}
+

@@ -1,0 +1,46 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+
+
+
+    <mat-nav-list class="sidemenu">
+      <img src="../../../assets/ERP logo.png" class="logo"/>
+      <hr>
+     
+          <i class="material-icons" id="menuicon" routerLink="/home">home</i>
+          <i class="material-icons" id="menuicon">assessment</i>
+          <i class="material-icons" id="menuicon" routerLink="/orders">shopping_cart</i>
+          <i class="material-icons" id="menuicon" routerLink="/products">ballot</i>
+          <i class="material-icons" id="menuicon" routerLink="/clients">person</i>
+          <i class="material-icons" id="menuicon" routerLink="/login">exit_to_app</i>    
+    
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span></span>
+    </mat-toolbar>
+
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

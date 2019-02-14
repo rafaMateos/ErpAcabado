@@ -1,0 +1,133 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: var(--marron);
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background: #E4E8EB;
+}
+
+::ng-deep .mat-progress-bar {
+  border-radius: 2px;
+}
+
+#DivProgres{
+
+  margin: auto;
+  margin-top: 20vh;
+  width: 50vw;
+  
+  }
+
+body {
+    position: relative;
+    margin: auto;
+    font-family: 'bah';
+    color: var(--marron);   
+  }
+  
+  
+  .pagename{
+  
+    font-size: 60px;
+    font-weight: bold;
+    margin: auto;
+    padding-top: 16px;
+    text-align: center;
+  }
+  
+ 
+  hr{
+    background-color: var(--marron);
+    height: 4px;
+    margin-left: 16px;
+    margin-right: 16px;
+    border: none;
+  
+  }
+  
+  .div-home{
+    margin: auto;
+    text-align: center;
+  
+    background: var(--blanco);
+    border-radius: 8px;
+    width: 85vw;
+   
+    float: right;
+    margin-right: 32px; 
+    margin-top: -32px;
+  
+  }
+  
+  .productstable{
+  
+  margin: auto;
+  width: 100%;
+
+  }
+  
+  
+  
+  .tablecontainer{
+  
+    overflow-y:scroll;
+    height: 80vh;
+  
+  
+  }
+  
+  th{
+    padding-top: 16px;
+    font-size: 24px;
+    margin: auto;
+  
+  }
+  
+  
+  td{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 20px;
+    color: var(--gris);
+    overflow: hidden;
+    margin: auto;
+    
+  }
+  
+  /*tr:nth-child(even){
+    
+    background-color: var(--marronClaro);
+  }*/
+  
+  /*td:hover{  //Preguntar si gustaria algo asi
+  
+    background: var(--marronClaro);
+    color: var(--blanco);
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+  
+  }*/
+  
+  .material-icons:hover{
+  
+    
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .material-icons{
+  
+    font-size: 32px;
+    
+  }
+
+  .outofstock{
+
+    color: var(--rojo);
+    font-weight: bold;
+
+  }

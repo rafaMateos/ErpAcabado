@@ -1,0 +1,82 @@
+body {
+    position: relative;
+    margin: auto;
+    font-family: 'bah';
+    color: var(--marron);   
+}
+
+
+.pagename{
+
+    font-size: 60px;
+    font-weight: bold;
+    margin: auto;
+    padding-top: 16px;
+}
+
+hr{
+    background-color: var(--marron);
+    height: 4px;
+    margin-left: 16px;
+    margin-right: 16px;
+    border: none;
+  
+  }
+
+#menuicon{
+
+    font-size: 80px;
+
+}
+
+.div-home{
+    margin: auto;
+    text-align: center;
+
+    background: var(--blanco);
+    border-radius: 8px;
+
+    height: 90vh;
+    width: 85vw;
+    float: right;
+    margin-right: 32px; 
+    margin-top: -32px;
+ 
+}
+
+.my-div-home-item {
+
+    margin: 32px;
+    display: inline-block;
+    width: 15vw;
+    height: auto;
+    padding-top: 64px; 
+    
+}
+
+.my-div-home-item:focus{
+
+    outline: none;
+
+}
+
+.my-div-home-item:hover{
+
+    cursor: pointer;
+    
+}
+
+
+.button-warpper{
+    
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+
+.my-div-home-item-text {
+    font-size: 50px;
+    
+    /* modificable */
+}

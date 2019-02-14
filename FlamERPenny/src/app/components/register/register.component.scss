@@ -1,0 +1,141 @@
+@import url(../../../variables.css);
+@import url(../../../styles.css);
+
+
+body{
+  font-family: "bah";
+  margin: auto;
+  
+}
+
+
+.logo{
+  width: 25%;
+  height: 25%;
+  margin: auto;
+  display: block;
+  margin-bottom: 16px;
+
+}
+
+.registertext{
+  text-align: left;
+  font-size: 24px;
+  color: var(--marron);
+  font-weight: bold
+
+}
+
+
+
+.accountext{
+  font-size: 20px;
+  color: var(--blanco);
+  text-align: center;
+
+}
+
+.accountext:focus{
+
+	outline: none;
+}
+
+.accountext:hover{
+
+  cursor: pointer;
+}
+
+hr{
+  background-color: var(--marron);
+  height: 4px;
+  border: none;
+
+}
+
+.register-page {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+
+}
+
+.form {
+  box-shadow: 6px 6px 6px var(--negroT);    /*Si no gusta lo cambio*/ /*Preguntar por el blur*/
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-align: center;
+
+}
+.form input {
+  font-family: "bah";
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--marron);
+  margin: auto;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  padding: 16px;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+  font-size: 20px;
+
+}
+
+
+.form input:focus{ 
+  outline: none;
+
+}
+
+.form-group {
+  position: relative;
+
+}
+
+.form-control-placeholder {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  transition: all 200ms;
+  font-size: 24px;
+  color: var(--marron);
+  font-weight: bold
+
+}
+
+.form-control:focus + .form-control-placeholder,
+.form-control:not(:placeholder-shown) + .form-control-placeholder {   
+  font-size: 80%;
+  transform: translate3d(0, -100%, 0);
+
+}
+
+.form button {
+  font-family: "bah";
+  font-weight: bold;
+  width: 160px;
+  border: 0;
+  border-radius: 8px;
+  padding: 15px;
+  color: var(--marron);
+  background-color: var(--transparente);
+  font-size: var(--tamanoindice);
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+
+}
+
+.form button:hover,.form button:active,.form button:focus {
+  background: var(--marron);
+  color: var(--blanco)
+
+}

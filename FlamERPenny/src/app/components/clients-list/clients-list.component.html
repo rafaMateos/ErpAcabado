@@ -1,0 +1,46 @@
+<html>
+<body>
+<div class="div-home">
+
+    <p class="pagename">CUSTOMERS</p>
+
+    <hr>
+
+<div class="tablecontainer">   
+<table cdk-table [dataSource]="dataOnPage$" class="customerstable">
+
+  <tr cdk-header-row *cdkHeaderRowDef="columns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: columns"></tr>
+
+ 
+  <ng-container cdkColumnDef="nombre">
+    <th cdk-header-cell *cdkHeaderCellDef>Customer name</th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.nombre}} </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="id">
+      <th cdk-header-cell *cdkHeaderCellDef></th>
+      <td cdk-cell *cdkCellDef="let row">
+          <i class="material-icons" id="icon">account_circle</i>
+      </td>
+  </ng-container>
+
+</table>
+
+<div id="DivProgres">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+</div>
+
+<!--<ngb-pagination
+  [collectionSize]="(dataSource$ | async)?.length"
+  [pageSize]="pageSize"
+  [page]="currentPage$.value"
+  (pageChange)="currentPage$.next($event)">
+</ngb-pagination>-->
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<body>
+  
+  <div class="login-page">
+  
+      <img class="logo" src="../../assets/ERP logo.png">
+  
+      <div class="form">
+  
+        <p class="logintext">LOGIN</p>
+  
+        <hr>
+  
+        <form class="login-form" name="loginForm" method="POST" #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+  
+            <div class="form-group">
+              
+              <input [(ngModel)]="user_name" type="email" name="email" id="email" class="form-control" placeholder=" " required/>
+              <label class="form-control-placeholder" for="email">Email</label>
+            </div>
+  
+            <div class="form-group">
+              <input [(ngModel)]="user_password" name="pass" id="pass" type="password" class="form-control" placeholder=" " required/>
+              <label class="form-control-placeholder" for="pass">Password</label>
+          </div>
+          <button type="submit" [disabled]="formData.form.invalid">GO</button>
+  
+  
+        </form>
+  
+    
+  
+      </div>
+  
+      <p class="accounttext" routerLink='/register'>Don't have an account? Get one!</p>
+  
+    </div>
+  
+  
+  
+    
+  
+  </body>

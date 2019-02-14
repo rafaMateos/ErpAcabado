@@ -1,0 +1,70 @@
+<html>
+<body>
+<div class="div-home">
+
+    <p class="pagename">PRODUCTS</p>
+
+    <hr>
+
+
+<div class="tablecontainer">
+<table cdk-table [dataSource]="dataSource$" class="productstable">
+
+  <tr cdk-header-row *cdkHeaderRowDef="columns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: columns"></tr>
+
+  <!-- nombre Column -->
+  <ng-container cdkColumnDef="nombre">
+    <th cdk-header-cell *cdkHeaderCellDef>Product name</th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.nombre}} </td>
+  </ng-container>
+
+  <!-- precioVenta Column -->
+  <ng-container cdkColumnDef="precioVenta">
+    <th cdk-header-cell *cdkHeaderCellDef>Unit Price(€)</th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.precioVenta}} </td>
+  </ng-container>
+
+  <!-- stock Column -->
+  <ng-container cdkColumnDef="stock">
+    <th cdk-header-cell *cdkHeaderCellDef>Stock</th>
+    <td cdk-cell *cdkCellDef="let row" [class.outofstock]="row.stock === 0"> {{row.stock}} </td>
+  </ng-container>
+
+  <!-- descripcion Column --> 
+  <ng-container cdkColumnDef="descripcion">
+    <th cdk-header-cell *cdkHeaderCellDef>Description</th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.descripcion}} </td>
+  </ng-container>
+
+  <!-- listaCategorias Column -->
+  <ng-container cdkColumnDef="listaCategorias">
+    <th cdk-header-cell *cdkHeaderCellDef>Category</th>
+    <td cdk-cell *cdkCellDef="let row"> 
+      <mat-chip-list>
+          <mat-chip *ngFor="let categoria of row.listaCategorias">{{categoria.nombre}}</mat-chip>
+      </mat-chip-list>
+    </td>
+    
+  </ng-container>
+
+</table>
+
+<div id="DivProgres">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+
+</div>
+
+<!--<ngb-pagination class="pagination"
+  [collectionSize]="(dataSource$ | async)?.length"
+  [pageSize]="pageSize"
+  [page]="currentPage$.value"
+  (pageChange)="currentPage$.next($event)">
+</ngb-pagination>-->
+
+</div>
+
+</body>
+</html>

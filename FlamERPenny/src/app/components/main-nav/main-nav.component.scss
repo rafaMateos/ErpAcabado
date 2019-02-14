@@ -1,0 +1,86 @@
+@import url(../../../variables.css);
+@import url(../../../styles.css);
+
+
+.logo{
+  width: 40%;
+  height: auto;
+  margin: auto;
+  display: block;
+  padding-top: 16px;
+
+}
+
+hr{
+  background-color: var(--marron);
+  height: 4px;
+  margin-left: 16px;
+  margin-right: 16px;
+  border: none;
+
+}
+
+#menuicon{
+  font-size: 60px;
+  color: var(--marron);
+  text-align: center;
+  margin: auto;
+  display: block;
+  padding-bottom: 4vh;
+
+  &:focus{
+    outline: none;
+  } 
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+
+i{
+  display: block;
+  float: center;
+  text-align: center;
+
+}
+
+.listado{
+
+  text-align: center;
+}
+
+
+.sidemenu{
+  background: var(--blanco);
+  border-radius: 8px;
+
+  width: 80%;
+
+  box-shadow: 6px 6px 6px var(--negroT);
+}
+
+
+.sidenav {
+    margin: auto;
+    text-align: center;
+
+   
+    border-radius: 8px;
+
+    height: 80vh;
+    width: 10vw;
+    float: left;
+
+}
+
+.sidenav-container{
+
+  height: 100%;
+}
+
+
+
+
+
+

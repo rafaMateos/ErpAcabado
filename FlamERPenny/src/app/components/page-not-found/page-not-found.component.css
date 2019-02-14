@@ -1,0 +1,33 @@
+body {
+    position: relative;
+    margin: auto;
+    font-family: 'bah';
+    color: var(--marron);   
+}
+
+
+.pagename{
+
+    font-size: 60px;
+    font-weight: bold;
+    margin: auto;
+    padding-top: 48px;
+}
+
+.errortext{
+    
+    font-size: 40px;
+}
+
+.div-home{
+    margin: auto;
+    margin-top: 32px;
+    text-align: center;
+
+    background: var(--blanco);
+    border-radius: 8px;
+
+    height: 90vh;
+    width: 85vw;
+ 
+}

@@ -1,0 +1,111 @@
+<html>
+<body>
+<div class="div-home">
+
+    
+    
+
+    <div class="headercontainer">
+
+        <div class="buttoncontainer">
+            <mat-form-field class="selectItem">
+                <select matNativeControl (change)="addProducto($event.target.selectedIndex)" >
+                  <option *ngFor="let product of products" value={{product.id}}>
+                  {{product.nombre}}
+                  </option>
+                </select>
+              </mat-form-field>
+        </div>
+              
+        <p class="pagename">NEW ORDER</p>
+            
+        <div class="searchcontainer">
+            <button value="grabar" (click)="guardarPedido()" class="newbutton" class="send">SAVE ORDER</button>
+        </div>
+        
+      </div>
+
+      <hr>
+
+  <div class="orderInfo">
+      <div class="peopleData">
+    <ul>
+      <p>Customer: </p>
+      <mat-form-field>
+        <select matNativeControl (change)="customerCambiado($event.target.value)">
+          <option *ngFor="let customer of customers" value="{{customer.id}}">
+          {{customer.nombre}}
+          </option>
+        </select>
+      </mat-form-field>
+    </ul>
+  </div>
+
+  <div class ="datesData">
+    <ul>
+      <p>Supplier: <mark>{{vendorName}}</mark></p>
+      
+    </ul>
+  </div>
+  </div>
+
+  <div class="tablecontainer" >
+  <table cdk-table [dataSource]="dataSource$" class="linestable">
+    <tr cdk-header-row *cdkHeaderRowDef="columns"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: columns"></tr>
+    <ng-container cdkColumnDef="nombre">
+      <th cdk-header-cell *cdkHeaderCellDef>Name</th>
+      <td cdk-cell *cdkCellDef="let row; let i = index;">{{row.nombre}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="descripcion">
+      <th cdk-header-cell *cdkHeaderCellDef>Description</th>
+      <td cdk-cell *cdkCellDef="let row">{{row.descripcion}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="listaCategorias">
+      <th cdk-header-cell *cdkHeaderCellDef>Category</th>
+      <td cdk-cell *cdkCellDef="let row"> {{row.categorias}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="stock">
+      <th cdk-header-cell *cdkHeaderCellDef>Stock</th>
+      <td cdk-cell *cdkCellDef="let row"> {{row.stock}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="unidades">
+      <th cdk-header-cell *cdkHeaderCellDef>Units</th>
+      <td cdk-cell *cdkCellDef="let row; let i = index;"> 
+        <input matInput value="{{row.cantidad}}" min="1" type="number" 
+          (focusout)="cantidadCambiada(i, $event)">
+      </td>
+    </ng-container>
+    <ng-container cdkColumnDef="precioUnitario">
+      <th cdk-header-cell *cdkHeaderCellDef>Unit price (€)</th>
+      <td cdk-cell *cdkCellDef="let row"> {{row.precioVenta}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="impuestos">
+      <th cdk-header-cell *cdkHeaderCellDef>Tax</th>
+      <td cdk-cell *cdkCellDef="let row"> {{row.impuestos}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="subtotal">
+      <th cdk-header-cell *cdkHeaderCellDef>Subtotal</th>
+      <td cdk-cell *cdkCellDef="let row; let i = index;"> 
+        <input matInput value="{{row.subtotal}}" min="0" maxFractionDigits="3" type="number" 
+          (focusout)="subtotalcambiado(i, $event)">
+      </td>
+    </ng-container>
+    <ng-container cdkColumnDef="Acciones" >
+      <th cdk-header-cell *cdkHeaderCellDef>Options</th>
+      <td cdk-cell  *cdkCellDef="let row; let i = index;" >
+        <i value="borrar" (click)="borrarLinea(i)" class="material-icons">delete</i>
+      </td>
+    </ng-container>
+  </table>
+  </div>
+
+  <hr>
+  <div class="total">
+    <p>TOTAL: <mark>{{precioTotalPedido | number : '1.2-2'}} €</mark></p>
+  </div>
+
+
+</div>
+</body>
+</html>  
